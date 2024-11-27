@@ -111,7 +111,11 @@ public class Util {
 
             map.forEach((String key, Object value) -> {
                 sb.append("    ");
-                sb.append("\"%s\": \"%s\",\n".formatted(key, value));
+                key = "\"" + key + "\"";
+                if (value instanceof String) {
+                    value = "\"" + value + "\"";
+                }
+                sb.append("%s: %s,\n".formatted(key, value));
             });
 
             // 맨 마지막의 ,제거
