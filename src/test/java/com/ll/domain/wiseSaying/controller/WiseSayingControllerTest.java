@@ -41,9 +41,16 @@ public class WiseSayingControllerTest {
                 등록
                 현재를 사랑하라.
                 작자미상
+                등록
+                현재를 사랑하라.
+                작자미상
                 """);
 
-        assertThat(output).contains("1번 명언이 등록되었습니다.")
-                .contains("2번 명언이 등록되었습니다.");
+        for (int i = 1; i <= 3; i++) {
+            assertThat(output).contains(i + "번 명언이 등록되었습니다.");
+        }
+        /*assertThat(output).contains("1번 명언이 등록되었습니다.")
+                .contains("2번 명언이 등록되었습니다.")
+                .contains("3번 명언이 등록되었습니다.");*/
     }
 }
