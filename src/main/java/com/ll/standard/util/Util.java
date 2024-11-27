@@ -3,6 +3,7 @@ package com.ll.standard.util;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Map;
 
 public class Util {
     public static class file {
@@ -96,6 +97,27 @@ public class Util {
         public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
             Files.delete(dir);
             return FileVisitResult.CONTINUE;
+        }
+    }
+
+    public static class json{
+        private json() {
+        }
+
+        public static String toString(Map<String, Object> map) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("{");
+            sb.append("\n");
+
+            map.forEach((String key, Object value) -> {
+                sb.append("    ");
+                sb.append("""
+                        "%s": "%s"
+                        """.formatted(key, value));
+            });
+            sb.append("}");
+
+            return sb.toString();
         }
     }
 }
