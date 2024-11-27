@@ -15,5 +15,6 @@ public class WiseSaying {
     public boolean isNew() {
         return id == 0;
     }
+
 }
 
