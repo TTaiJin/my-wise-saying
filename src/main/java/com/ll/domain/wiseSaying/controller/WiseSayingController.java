@@ -26,13 +26,14 @@ public class WiseSayingController {
         WiseSaying wiseSaying = wiseSayingService.add(content, author);
 
         System.out.println(wiseSaying.getId() + "번 명언이 등록되었습니다.");
-
     }
 
     public void actionList() {
         System.out.println("번호 / 작가 / 명언");
         System.out.println("----------------------");
+
         List<WiseSaying> wiseSayings = wiseSayingService.findAll();
+
         for (WiseSaying wiseSaying : wiseSayings.reversed()) {
             System.out.println(wiseSaying.getId() + " / " + wiseSaying.getAuthor() + " / " + wiseSaying.getContent());
         }
@@ -73,6 +74,11 @@ public class WiseSayingController {
 
         WiseSaying wiseSaying = opWiseSaying.get();
         System.out.println("명언(기존) : " + wiseSaying.getContent());
+        String content = scanner.nextLine();
+
         System.out.println("작가(기존) : " + wiseSaying.getAuthor());
+        String author = scanner.nextLine();
+
+        wiseSayingService.modify(wiseSaying, content, author);
     }
 }
