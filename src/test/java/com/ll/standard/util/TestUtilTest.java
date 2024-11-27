@@ -40,4 +40,6 @@ public class TestUtilTest {
         assertThat(out).isEqualTo("2 / 이순신 / 나의 죽음을 적들에게 알리지 말라!");
         System.out.println("이제는 화면에 출력됩니다.");
     }
+
+
 }
