@@ -35,6 +35,7 @@ public class App {
                 case "등록" -> wiseSayingController.actionAdd();
                 case "목록" -> wiseSayingController.actionList();
                 case "삭제" -> wiseSayingController.actionDelete(command);
+                case "수정" -> wiseSayingController.actionModify(command);
             }
         }
     }
