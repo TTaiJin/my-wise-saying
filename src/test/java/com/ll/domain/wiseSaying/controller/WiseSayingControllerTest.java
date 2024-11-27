@@ -35,7 +35,7 @@ public class WiseSayingControllerTest {
                 종료
                 """);
 
-        String[] split = output.split("명령\\) ");
+        String[] split = output.split("명령\\)");
         assertThat(split).hasSize(4);
     }
 }
