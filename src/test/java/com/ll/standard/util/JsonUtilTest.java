@@ -127,11 +127,13 @@ public class JsonUtilTest {
         String jsonStr = """
                 {
                     "name": "이름",
-                """;
+                }
+                """.stripIndent().trim();
         // when
         Map<String, Object> map = Util.json.toMap(jsonStr);
 
         // then
         assertThat(map).containsEntry("name", "이름");
     }
+
 }
